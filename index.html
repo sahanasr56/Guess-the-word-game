@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the word</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Guess the word</h2>
+    <div class="container">
+        <div class="wrapper">
+            <div class="chance">
+                <input type="text" id="first" disabled>
+                <input type="text" id="second" required maxlength="1">
+                <input type="text" id="third" required maxlength="1">
+                <input type="text" id="fourth" disabled>
+                <input type="text" id="fifth" required maxlength="1">
+            </div>
+            <button class="enter">Enter</button>
+        </div>
+        <div class="res-div">
+            <div class="details">
+                <div class="result"></div>
+                <div class="chances">You have 3 chances to guess the word!</div>
+            </div>
+            <button class="new hide">New Game</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
