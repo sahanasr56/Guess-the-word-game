@@ -7,7 +7,7 @@ let startNewGame=document.querySelector(".new");
 let count=3;
 
 const wordSelect=()=>{
-    const wordsList=["world", "paper", "style", "stone", "ghost", "plays", "power", "light", "metal", "group", "guess", "magic", "value", "first", "lucky", "shift", "eight", "shine","mouth"];
+    const wordsList=["world", "paper", "style", "stone", "ghost", "plays", "power", "light", "metal", "group", "guess", "magic", "empty", "value", "first", "lucky", "shift", "eight", "shine","mouth"];
     let ranNum=Math.floor(Math.random()*(wordsList.length));
     return wordsList[ranNum];
 }
