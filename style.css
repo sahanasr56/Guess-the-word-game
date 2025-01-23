@@ -24,6 +24,10 @@ input{
     font-size: 1.5rem;
 }
 
+#second,#third,#fourth,#fifth{
+    text-transform: lowercase;
+}
+
 .container{
     height: 70vh;
     display: flex;
@@ -46,6 +50,10 @@ input{
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    @media screen and (max-width:992px) {
+        gap: 7px;
+    }
 }
 
 .enter, .new{

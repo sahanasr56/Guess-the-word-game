@@ -15,8 +15,7 @@ const wordSelect=()=>{
 let givenWord=wordSelect();
 
 const setWord=(fixedLetter)=>{
-console.log(givenWord);
-document.getElementById("first").value=fixedLetter[0];
+document.getElementById("first").value=(fixedLetter[0]).toUpperCase();
 document.getElementById("fourth").value=fixedLetter[3];
 }
 
@@ -31,7 +30,8 @@ const getUserWord=()=>{
             userWord=userWord+val; 
         }     
     })
-    return userWord;
+    console.log(userWord.toLowerCase())
+    return userWord.toLowerCase();
 }
 
 const checkResult=(res)=>{
@@ -42,17 +42,20 @@ const checkResult=(res)=>{
         pendingChance.innerText=``
         enter.disabled=true;
     }else{
-        result.innerText="Wrong answer:)";
+        if(count===0){
+            startNewGame.classList.remove("hide");
+            pendingChance.innerText="Oops! You have lost all the chances:) \n Please start the New Game!"
+        }else{
+            result.innerText="Wrong answer:)";
         result.style.color="red";
         pendingChance.innerText=`You have ${count} chances left`
+        }
+        
     }
 }
 
 enter.addEventListener("click", ()=>{
-    if(count===0){
-        startNewGame.classList.remove("hide");
-        pendingChance.innerText="Oops! You have lost all the chances:) \n Please start the New Game!"
-    }else if(count>0){
+     if(count>0){
         let word=getUserWord();
         if(word.length===5){
             count--;
@@ -67,6 +70,7 @@ startNewGame.addEventListener("click",()=>{
     result.innerText=""
     pendingChance.innerText=`You will have 3 chances`;
     givenWord=wordSelect();
+    enter.disabled=false;
     setWord(givenWord);
     document.getElementById("second").value="";
     document.getElementById("third").value="";
